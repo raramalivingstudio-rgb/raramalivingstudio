@@ -1,0 +1,15 @@
+{
+  "name": "rarama-living-studio",
+  "version": "0.1.0",
+  "description": "Local design clone of a restaurant marketing site, branded as Rarama Living Studio.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
