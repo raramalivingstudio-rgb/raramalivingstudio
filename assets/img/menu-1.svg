@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#F7F1E8"/>
+  <ellipse cx="300" cy="240" rx="160" ry="40" fill="#E5DBC8"/>
+  <ellipse cx="300" cy="220" rx="140" ry="100" fill="#F7F1E8" stroke="#3B2A1E" stroke-width="2"/>
+  <circle cx="260" cy="200" r="20" fill="#C46A3F"/>
+  <circle cx="310" cy="190" r="15" fill="#5C6B4F"/>
+  <circle cx="350" cy="210" r="18" fill="#C46A3F"/>
+  <text x="300" y="350" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#3B2A1E">Starters</text>
+</svg>

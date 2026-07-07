@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#3B2A1E"/>
+  <g stroke="#C46A3F" stroke-width="2" fill="none">
+    <line x1="100" y1="150" x2="500" y2="150"/>
+    <line x1="120" y1="170" x2="480" y2="170"/>
+    <line x1="140" y1="190" x2="460" y2="190"/>
+  </g>
+  <ellipse cx="220" cy="240" rx="50" ry="20" fill="#6B5239"/>
+  <ellipse cx="300" cy="250" rx="60" ry="22" fill="#8B6B47"/>
+  <ellipse cx="380" cy="240" rx="50" ry="20" fill="#6B5239"/>
+  <text x="300" y="350" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#F7F1E8">Grill</text>
+</svg>
