@@ -6,6 +6,13 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 const ROOT = __dirname;
 
+// Clean URL for the rooms page — must come BEFORE static middleware,
+// otherwise express.static redirects /rooms → /rooms/ (which still works,
+// but this avoids the extra round-trip and keeps the URL clean)
+app.get('/rooms', (req, res) => {
+  res.sendFile(path.join(ROOT, 'rooms', 'index.html'));
+});
+
 // Serve static files (index.html at /, plus /assets/* and /data/*)
 app.use(express.static(ROOT));
 
