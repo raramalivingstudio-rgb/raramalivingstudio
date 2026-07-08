@@ -2215,38 +2215,332 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </style>
 
                 <div role="main" class="main" style="">
+<style type="text/css">
+  
+.slideshow {
+  position: relative;
+  font-family: var(--primtext);
+  z-index: 1;
+  overflow: hidden;
+
+}
+
+.slider .item {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background: #000;
+}
+
+/*.slider .item:after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    transform: rotate(180deg);
+    background: linear-gradient(180deg, #000000 -80%, rgba(0, 0, 0, 0) 100%);
+}*/
+
+.slider .item:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    z-index: 10;
+    background: linear-gradient(180deg, #000000 -50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.img-slide {
+  width: 100%;
+  height: 100vh;
+  object-position: bottom;
+  object-fit: cover;
+}
+
+.header-body {
+    background-color: transparent !important;
+    border: unset !important;
+    transition: all ease 500ms;
+}
+
+.slider-tt {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+    text-align: left;
+    padding: 0 8%;
+    z-index: 100;
+}
+
+.slider-tt h1 {
+    font-family: var(--primtext);
+    color: white;
+    letter-spacing: .5px;
+    font-weight: 500;
+    text-align: left;
+	max-width: 700px;
+    text-transform: capitalize;
+}
+.slider-tt p {
+    font-family: var(--subtext);
+    color: #fafafa;
+    font-weight: 300;
+    font-size: 16px;
+	max-width: 800px;
+}
+
+.slider-tt .sp-slide {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 1;
+    font-family: var(--subtext);
+}
+.slider-tt .sp-slide i {
+    padding-left: 10px;
+    padding-right: 10px;
+    opacity: 0;
+    color: #000;
+}
+
+/* .slider-tt .sp-slide:before {
+    content: "";
+    height: 23px;
+    width: 2px;
+    position: absolute;
+    left: 0%;
+    transform: translateX(0%) skew(-25deg);
+    background-color: #fff;
+    top: 0px;
+    z-index: -1;
+    margin-left: 0px;
+}
+.slider-tt .sp-slide:after {
+    content: "";
+    height: 23px;
+    width: 30px;
+    position: absolute;
+    left: 0px;
+    transform: translateX(0%) skew(-25deg);
+    background-color: #fff;
+    top: 0px;
+    z-index: -1;
+    margin-left: 5px;
+} */
+.slider-tt .slide-btn {
+    background: var(--color5);
+    border: 1px solid var(--colors);
+    padding: 10px 42px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #000;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: all ease 300ms;
+    font-family: var(--subtext);
+}
+.slider-tt .slide-btn:hover {
+    background: #fff;
+    border:1px solid #fff;
+}
+.slider-tt .slide-btn.btn-1 {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-right: 15px;
+}
+.slider-tt .slide-btn.btn-1:hover {
+    background: #fff;
+    color: #000;
+}
+@media (min-width: 768px) {
+  .slider-tt h1 {
+      font-size: 50px;
+      line-height: 60px;
+      margin-bottom: 15px;
+  }
+
+  .slider-tt .sp-slide {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+
+  }
+}
+
+@media (min-width: 1280px) {
+    .slider-tt h1 {
+        font-size: 65px;
+        line-height: 70px;
+        margin-bottom: 15px;
+    }
+
+    .slider-tt .sp-slide {
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .img-slide {
+        height: 101vh;
+        opacity: 1;
+
+    }
+    .slideshow { 
+        height: 100%; 
+        margin-top:0; 
+        padding: 0px;
+    }
+
+    .slider-tt {
+        bottom: 0%;
+        padding: 18px 0%;
+        /* text-align: center; */
+        /* position: relative; */
+        transform: translateY(0%);
+        /* background: #f6f6f6; */
+    }
+
+    .slider-tt .sp-slide {
+        /* color: #000; */
+        font-size: 10px;
+		margin-bottom: 10px;
+    }
+    .slider-tt h1 span {
+        /* font-size: 40px;
+        line-height: 40px; */
+    }
+
+    .slider-tt h1 {
+        /* text-align: center; */
+        /* color: var(--color2); */
+        font-size: 35px;
+        line-height: 45px;
+        margin-bottom: 15px;
+    }
+    .slider-tt h1 br {display: none}
+
+    .slider-tt p {
+        font-size: 14px;
+        font-weight: 400 !important;
+        /* padding: 0px 40px; */
+		display: none;
+        color: #444;
+    }
+
+    .slider-tt .slide-btn {
+        width: 100%;
+    }
+
+    .slider-tt .slide-btn.btn-1 {
+
+        background: var(--color2);
+        border: 1px solid var(--color2);
+        color: var(--colors);
+    }
+    .slider-tt .slide-btn.btn-1:hover {
+        background: var(--colors);
+        border: 1px solid var(--colors);
+        color: #000;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    bottom: 8%;
+    right: 10%;
+    z-index: 10;
+    padding: 1rem 0;
+    list-style-type: none;
+}
+    
+.slick-dots li {
+    margin: 0 12px;
+}
+
+.slick-dots button {
+    display: block;
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    
+    border: none;
+    border-radius: 100%;
+    background-color: #ffffff66;
+    
+    text-indent: -9999px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #fff;
+}
+    
+  .slider .col-custom {
+    width: 20%;
+  }
+  
+@media (max-width: 768px) {
+    .slick-dots { display:none !important; }
+    .slider.col-custom {
+      width: 100%;
+    }
+    .slider-tt .sp-slide:before {
+        background: var(--colors) }
+    .slider-tt .sp-slide:after {
+        background: var(--colors) }
+}
+</style>
 
 
+<div class="slideshow animate-items">
+    <div class="slider">
+                    <div class="item">
+                <img alt="img-slider" class="img-slide" src="/assets/img/RARAMA LIVING STUDIO.png"/>
+            </div>
+            </div>
 
-<div role="main" class="main" style="">
+    <div class="slider-tt animate-items wow fadeIn " data-wow-duration="2s" data-wow-delay='0.5s'>
 
-<section class="elementor-section elementor-top-section elementor-element elementor-element-20df13ea elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="20df13ea" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                            <div class="elementor-background-overlay"></div>
-                            <div class="elementor-container elementor-column-gap-default">
-                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d2fe9fa" data-id="d2fe9fa" data-element_type="column">
-            <div class="elementor-widget-wrap elementor-element-populated">
-                        <div class="elementor-element elementor-element-6058ed17 elementor-widget elementor-widget-heading" data-id="6058ed17" data-element_type="widget" data-widget_type="heading.default">
-                <div class="elementor-widget-container">
-                    <h2 class="elementor-heading-title elementor-size-default">Deluxe Room with Pool View</h2>                </div>
+          <!--  <div class="container" style="max-width: 1280px">
+                <div class="sp-slide">
+                    Indonesian Restaurant in Kerobokan, Bali
                 </div>
-                <div class="elementor-element elementor-element-31e51704 elementor-icon-list--layout-inline elementor-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="31e51704" data-element_type="widget" data-widget_type="icon-list.default">
-                <div class="elementor-widget-container">
-                            <ul class="elementor-icon-list-items elementor-inline-items">
-                            <li class="elementor-icon-list-item elementor-inline-item">
-                                        <span class="elementor-icon-list-text">Rarama</span>
-                                    </li>
-                                <li class="elementor-icon-list-item elementor-inline-item">
-                                            <span class="elementor-icon-list-icon">
-                            <i aria-hidden="true" class="fas fa-chevron-right"></i>                        </span>
-                                        <span class="elementor-icon-list-text">Room Detail</span>
-                                    </li>
-                        </ul>
-                        </div>
-                </div>
-                    </div>
-        </div>
-                    </div>
-        </section></div>
+                <h1>
+                 Soulful Indonesian Flavors Made to Share
+                </h1>
+                <!--<p>
+                    Welcome to Rarama Living Studio, a warm Indonesian dining destination in Natajiwa Village, Kerobokan. Enjoy home-style Nusantara dishes, heartfelt family recipes, and a peaceful garden atmosphere made for sharing.
+                </p>-->
+
+
+                <!-- <div class="button mt-md-5 w-100 pb-3">
+                    <a class="slide-btn btn-1" href="https://restoransorai.com/category/our-room">View Rooms</a>
+                    <a class="slide-btn" href="https://api.whatsapp.com/send?phone=6282341985030&text=Hello%2C%20I%20found%20the%20Rarama Living Studio%20website%20and%20I'm%20interested%20in%20staying%20at%20your%20villa.%20Could%20you%20please%20help%20me%20with%20the%20availability%20and%20reservation%20details%3F%0A%0AThank%20you.">Reserve Now</a>
+                </div> -->
+            </div>
+
+    </div>
+</div>
 
 
 <style>
