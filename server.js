@@ -23,6 +23,11 @@ app.get('/kuta-area', (req, res) => {
   res.sendFile(path.join(ROOT, 'kuta-area', 'index.html'));
 });
 
+// Clean URL for the Contact page — same pattern as the other pages.
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(ROOT, 'contact', 'index.html'));
+});
+
 // Serve static files (index.html at /, plus /assets/* and /data/*)
 app.use(express.static(ROOT));
 
