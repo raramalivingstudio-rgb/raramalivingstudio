@@ -18,6 +18,11 @@ app.get('/gallery', (req, res) => {
   res.sendFile(path.join(ROOT, 'gallery', 'index.html'));
 });
 
+// Clean URL for the Kuta Area page — same pattern as /rooms and /gallery.
+app.get('/kuta-area', (req, res) => {
+  res.sendFile(path.join(ROOT, 'kuta-area', 'index.html'));
+});
+
 // Serve static files (index.html at /, plus /assets/* and /data/*)
 app.use(express.static(ROOT));
 
