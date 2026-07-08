@@ -286,7 +286,174 @@
   </div>
 </section>
 
+<footer id="footer-root">
+    <img src="https://jwc.gotra-resources.my.id/web-upload/1781337177-13-06-2026-I1aKlonwcXrQWDuvOsz4m98CTgBFkdhf.webp" class="footer-background" alt="background">
+    <div class="footer-header mb-md-4 mb-3">
+
+		<div class="title-general text-center px-2">
+            <div class="tag-ats text-light">
+				Rarama Living Studio
+            </div>
+            <h2 class="title text-light" style="max-width: unset;">Share a Meal, Celebrate a Moment</h2>
+			<p  class="footer-header-desc">
+				Whether you are coming for a comforting Indonesian meal, planning a family gathering, or preparing a special event, Rarama Living Studio welcomes you to pause, share, and savor every moment.
+			</p>
+        </div>
+
+        <a href="https://wa.me/6282341985030" class="footer-header-cta">
+			Book Your Table
+		</a>
+    </div>
+
+    <div class="footer-content">
+	    <div class="footer-content-top">
+	    	<div class="row w-100">
+	    		<div class="col-md-5 px-3">
+	            <div class="footer-content-1 footer-content-section">
+	                <a href="/" class="brand">
+	                    <img alt="brand" src="/assets/img/rarama-living-studio.png">
+	                </a>
+	                <p class="mb-4">
+						Rarama Living Studio is an Indonesian restaurant in Kerobokan, Bali, serving home-style Nusantara dishes in Natajiwa Village with a warm garden venue for dining and events.
+	                </p>
+	            </div>
+	            </div>
+	            <div class="col-md-4 px-3">
+	            <div class="footer-content-2 footer-content-section">
+	                <h3 class="section-title">Contact Information</h3>
+	                <div class="section-list">
+	                    <p class="list-contact">
+	                        <i class="fa-solid fa-location-dot mr-2"></i>
+	                        Jl. Pengubengan Kauh, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361	                    </p>
+	                    <p class="list-contact">
+	                        <i class="fab fa-whatsapp mr-2"></i>
+	                        +6282341985030	                    </p>
+	                    <p class="list-contact">
+	                        <i class="fa-solid fa-envelope mr-2"></i>
+	                        info@restoransorai.com	                    </p>
+	                </div>
+	            </div>
+	            </div>
+	            <div class="col-md-3 px-3">
+	            <div class="footer-content-3 footer-content-section">
+	                <h3 class="section-title">Navigate To</h3>
+	                <div class="section-list">
+	                    <a class="list-link" href="/">
+	                        <i class="fa-solid fa-chevron-right mr-2"></i> Home	                    </a>
+	                    <a class="list-link" href="/rooms.html">
+	                        <i class="fa-solid fa-chevron-right mr-2"></i> Rooms	                    </a>
+	                </div>
+	            </div>
+	            </div>
+	        </div>
+	        </div>
+
+	        <div class="footer-content-bottom">
+	            <p>© Copyright 2025 <b>Rarama Living Studio</b>. All Rights Reserved.</p>
+	        </div>
+	    </div>
+	</footer>
+
 </div><!-- /.body -->
+
+<!-- Gallery Lightbox -->
+<style>
+  .gallery-grid img { transition: transform 0.25s ease, opacity 0.25s ease; cursor: zoom-in; }
+  .gallery-grid img:hover { transform: scale(1.02); opacity: 0.92; }
+  .gl-lightbox {
+    position: fixed; inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  .gl-lightbox.active { display: flex; }
+  .gl-lightbox img {
+    max-width: 92vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    cursor: default;
+    object-fit: contain;
+  }
+  .gl-lightbox-close {
+    position: absolute;
+    top: 18px; right: 22px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .gl-lightbox-close:hover { background: var(--colors, #005232); }
+  .gl-lightbox-caption {
+    position: absolute;
+    bottom: 22px; left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.85;
+    text-align: center;
+    max-width: 80vw;
+  }
+  body.gl-no-scroll { overflow: hidden; }
+</style>
+
+<div class="gl-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <button class="gl-lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="glLightboxImg" />
+  <div class="gl-lightbox-caption" id="glLightboxCaption"></div>
+</div>
+
+<!-- Vendor + Theme scripts (only those needed for Swiper + WOW animations) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://restoransorai.com/assets/front/js/theme.min.js"></script>
+<script src="https://restoransorai.com/assets/front/js/wow.min.js"></script>
+<script src="https://restoransorai.com/assets/front/js/common/common.min.js"></script>
+
+<!-- Lightbox script -->
+<script>
+(function () {
+  var lightbox = document.getElementById('galleryLightbox');
+  var lbImg = document.getElementById('glLightboxImg');
+  var lbCap = document.getElementById('glLightboxCaption');
+  var closeBtn = lightbox.querySelector('.gl-lightbox-close');
+
+  function open(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lbCap.textContent = alt || '';
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('gl-no-scroll');
+  }
+
+  function close() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('gl-no-scroll');
+  }
+
+  document.querySelectorAll('.gallery-grid img').forEach(function (img) {
+    img.addEventListener('click', function () { open(img.src, img.alt); });
+  });
+
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) close();
+  });
+})();
+</script>
 
 </body>
 </html>
