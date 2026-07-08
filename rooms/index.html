@@ -3369,161 +3369,251 @@ ABOUT SECTION ONLY
 ROOM DETAIL SECTIONS
 ========================= */
 .room-detail-section {
-    padding: 60px 0;
+    padding: 80px 0 90px;
     background: #fff;
+    position: relative;
 }
 .room-detail-section + .room-detail-section {
     border-top: 1px solid #f0f0f0;
 }
+
+/* TITLE BAR */
 .room-detail-section .rd-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 .room-detail-section .rd-title-tag {
     font-family: var(--subtext);
     color: var(--color5);
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    display: block;
-    margin-bottom: 8px;
+    letter-spacing: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 16px;
+    border: 1px solid var(--color5);
 }
 .room-detail-section .rd-title h3 {
     font-family: var(--primary);
-    color: #222;
-    font-size: 28px;
+    color: #1a1a1a;
+    font-size: 36px;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-weight: 500;
 }
-.room-detail-section .rd-title hr {
-    width: 60px;
-    border-color: var(--color5);
-    border-top-width: 2px;
-    margin: 15px auto 0;
-    opacity: 1;
+.room-detail-section .rd-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    color: var(--color5);
+    gap: 14px;
+}
+.room-detail-section .rd-ornament::before,
+.room-detail-section .rd-ornament::after {
+    content: '';
+    flex: 0 0 60px;
+    height: 1px;
+    background: var(--color5);
+}
+
+/* MAIN GRID */
+.room-detail-section .rd-grid {
+    align-items: stretch;
 }
 .room-detail-section .rd-desc {
-    padding-right: 24px;
+    padding-right: 32px;
 }
+
+/* HERO + THUMBS GALLERY */
+.room-detail-section .rd-media {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 10px;
+    min-height: 620px;
+    height: 100%;
+}
+.room-detail-section .rd-hero {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+}
+.room-detail-section .rd-hero:hover {
+    transform: scale(1.02);
+}
+.room-detail-section .rd-thumbs {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}
+.room-detail-section .rd-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+    margin: 0;
+}
+.room-detail-section .rd-thumb:hover {
+    transform: scale(1.04);
+}
+
+/* DESCRIPTION TYPOGRAPHY */
 .room-detail-section h2.elementor-heading-title {
     font-family: var(--primary);
-    font-size: 24px;
+    font-size: 26px;
     color: var(--color5);
-    margin: 0 0 12px 0;
-    font-weight: 600;
+    margin: 0 0 18px 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 14px;
+}
+.room-detail-section h2.elementor-heading-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color5);
+}
+.room-detail-section .elementor-text-editor {
+    font-family: var(--subtext);
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0 0 28px 0;
 }
 .room-detail-section h6.elementor-heading-title {
     font-family: var(--subtext);
     font-size: 13px;
-    color: var(--color5);
+    color: #1a1a1a;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 22px 0 14px 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
+    letter-spacing: 3px;
+    margin: 28px 0 16px 0;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-.room-detail-section .elementor-text-editor {
-    font-family: var(--subtext);
-    color: #444;
-    font-size: 15px;
-    line-height: 1.7;
-    margin: 0;
+.room-detail-section h6.elementor-heading-title::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--color5);
+    display: inline-block;
 }
 .room-detail-section ul.elementor-icon-list-items {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
 }
 .room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item {
-    width: 50%;
-    padding: 6px 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     font-family: var(--subtext);
-    font-size: 14px;
+    font-size: 15px;
     color: #444;
+    border-bottom: 1px dashed #eee;
+}
+.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item:last-child {
+    border-bottom: none;
 }
 .room-detail-section ul.elementor-icon-list-items .elementor-icon-list-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--color5);
-    border-radius: 50%;
-    color: #fff;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 82, 50, 0.08);
+    color: var(--color5);
+    border-radius: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px;
-    font-size: 13px;
+    margin-right: 14px;
+    font-size: 14px;
     flex-shrink: 0;
+    transition: all 300ms ease;
+}
+.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item:hover .elementor-icon-list-icon {
+    background: var(--color5);
+    color: #fff;
+}
+.room-detail-section .elementor-button-wrapper {
+    margin-top: 36px;
 }
 .room-detail-section .elementor-button {
-    display: inline-block;
-    margin-top: 26px;
-    padding: 14px 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 38px;
     background: var(--color5);
     color: #fff !important;
     font-family: var(--subtext);
     font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-decoration: none;
-    transition: all 300ms ease;
-    animation: rd-float 2.8s ease-in-out infinite;
     border: none;
     cursor: pointer;
+    transition: all 350ms ease;
+}
+.room-detail-section .elementor-button::after {
+    content: '→';
+    font-size: 16px;
+    transition: transform 350ms ease;
 }
 .room-detail-section .elementor-button:hover {
     background: var(--color4);
-    transform: translateY(-2px);
+    letter-spacing: 4px;
 }
-@keyframes rd-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+.room-detail-section .elementor-button:hover::after {
+    transform: translateX(4px);
 }
-.room-detail-section .rd-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+.room-detail-section .elementor-button-text {
+    font-weight: 600;
 }
-.room-detail-section .rd-gallery figure {
-    margin: 0;
-    overflow: hidden;
-}
-.room-detail-section .rd-gallery .rd-img {
-    width: 100%;
-    aspect-ratio: 1820 / 1920;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-    cursor: zoom-in;
-}
-.room-detail-section .rd-gallery .rd-img:hover {
-    transform: scale(1.04);
-}
-.room-detail-section .rd-featured-wrap {
-    height: 100%;
-    overflow: hidden;
-}
-.room-detail-section .rd-featured {
-    width: 100%;
-    aspect-ratio: 1820 / 1920;
-    object-fit: cover;
-    display: block;
-    cursor: zoom-in;
-    transition: transform 0.4s ease;
-}
-.room-detail-section .rd-featured:hover {
-    transform: scale(1.02);
-}
+
 @media (max-width: 991px) {
     .room-detail-section .rd-desc {
         padding-right: 0;
+        margin-bottom: 32px;
     }
-    .room-detail-section .row.rd-grid > [class*="col-"] {
-        margin-bottom: 24px;
+    .room-detail-section .rd-media {
+        min-height: 480px;
+    }
+    .room-detail-section .rd-title h3 {
+        font-size: 28px;
+    }
+    .room-detail-section {
+        padding: 60px 0 70px;
+    }
+}
+@media (max-width: 575px) {
+    .room-detail-section .rd-media {
+        grid-template-columns: 1fr;
+        grid-template-rows: 240px repeat(4, 110px);
+        min-height: auto;
+    }
+    .room-detail-section .rd-hero {
+        grid-column: 1;
+        grid-row: 1;
+        height: 240px;
+    }
+    .room-detail-section .rd-thumbs {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-rows: none;
+        grid-template-columns: repeat(4, 1fr);
+        height: 110px;
     }
 }
 </style>
@@ -3533,12 +3623,12 @@ ROOM DETAIL SECTIONS
         <div class="rd-title">
             <span class="rd-title-tag">Room Type</span>
             <h3>Deluxe Room with Pool View</h3>
-            <hr>
+            <div class="rd-ornament">◆</div>
         </div>
         <div class="row rd-grid">
 
             <!-- DESCRIPTION -->
-            <div class="col-lg-4 col-12 rd-desc">
+            <div class="col-lg-5 col-12 rd-desc">
                 <h2 class="elementor-heading-title">Description</h2>
                 <div class="elementor-text-editor">
                     <p>Indulge in comfort and convenience at our hotel, designed to accommodate up to 2 guests. Enjoy a refreshing outdoor pool and modern bathroom amenities for your relaxation. Experience ultimate comfort with air conditioning and entertainment on a flat-screen TV. Step onto the terrace to soak in the views, stay connected with free Wi-Fi, and rest assured with complimentary parking during your stay.</p>
@@ -3585,20 +3675,16 @@ ROOM DETAIL SECTIONS
                 </div>
             </div>
 
-            <!-- 2x2 GALLERY -->
-            <div class="col-lg-4 col-12">
-                <div class="rd-gallery">
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-1.jpg" alt="Deluxe Room bed view"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bathroom.jpg" alt="Deluxe Room bathroom"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bedroom-view.jpg" alt="Deluxe Room bedroom view"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-morning.jpg" alt="Deluxe Room bed morning"></figure>
-                </div>
-            </div>
-
-            <!-- FEATURED IMAGE -->
-            <div class="col-lg-4 col-12">
-                <div class="rd-featured-wrap">
-                    <img class="rd-featured" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed.jpg" alt="Deluxe Room main view">
+            <!-- HERO + THUMBS GALLERY -->
+            <div class="col-lg-7 col-12">
+                <div class="rd-media">
+                    <img class="rd-hero" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed.jpg" alt="Deluxe Room with Pool View">
+                    <div class="rd-thumbs">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-1.jpg" alt="Deluxe Room with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bathroom.jpg" alt="Deluxe Room with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bedroom-view.jpg" alt="Deluxe Room with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-morning.jpg" alt="Deluxe Room with Pool View">
+                    </div>
                 </div>
             </div>
 
@@ -3612,12 +3698,12 @@ ROOM DETAIL SECTIONS
         <div class="rd-title">
             <span class="rd-title-tag">Room Type</span>
             <h3>Junior Suite with Pool View</h3>
-            <hr>
+            <div class="rd-ornament">◆</div>
         </div>
         <div class="row rd-grid">
 
             <!-- DESCRIPTION -->
-            <div class="col-lg-4 col-12 rd-desc">
+            <div class="col-lg-5 col-12 rd-desc">
                 <h2 class="elementor-heading-title">Description</h2>
                 <div class="elementor-text-editor">
                     <p>Indulge in luxury with our junior suite, designed to elevate your stay with spacious accommodation and upscale amenities. Experience comfort and style with separate living and sleeping areas, perfect for relaxation or productivity. Unwind in a lavish bathroom, savoring modern comforts and indulgent features. Elevate your experience with personalized service and unparalleled comfort in our junior suite.</p>
@@ -3664,20 +3750,16 @@ ROOM DETAIL SECTIONS
                 </div>
             </div>
 
-            <!-- 2x2 GALLERY -->
-            <div class="col-lg-4 col-12">
-                <div class="rd-gallery">
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed.jpg" alt="Junior Suite bed view"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed-lamp-night.jpg" alt="Junior Suite bed at night with lamp"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bathroom.jpg" alt="Junior Suite bathroom"></figure>
-                    <figure><img class="rd-img" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed-bath-view.jpg" alt="Junior Suite bed with bath view"></figure>
-                </div>
-            </div>
-
-            <!-- FEATURED IMAGE -->
-            <div class="col-lg-4 col-12">
-                <div class="rd-featured-wrap">
-                    <img class="rd-featured" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed.jpg" alt="Junior Suite main view">
+            <!-- HERO + THUMBS GALLERY -->
+            <div class="col-lg-7 col-12">
+                <div class="rd-media">
+                    <img class="rd-hero" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed.jpg" alt="Junior Suite with Pool View">
+                    <div class="rd-thumbs">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed.jpg" alt="Junior Suite with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed-lamp-night.jpg" alt="Junior Suite with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bathroom.jpg" alt="Junior Suite with Pool View">
+                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/junior-suite/bed-bath-view.jpg" alt="Junior Suite with Pool View">
+                    </div>
                 </div>
             </div>
 
@@ -6174,7 +6256,7 @@ $('.img-bawah').slick({
     img.addEventListener('click', function () { open(img.src, img.alt); });
   });
 
-  document.querySelectorAll('.rd-gallery img, .rd-featured').forEach(function (img) {
+  document.querySelectorAll('.rd-hero, .rd-thumb').forEach(function (img) {
     img.addEventListener('click', function () { open(img.src, img.alt); });
   });
 
