@@ -3377,47 +3377,6 @@ ROOM DETAIL SECTIONS
     border-top: 1px solid #f0f0f0;
 }
 
-/* TITLE BAR */
-.room-detail-section .rd-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.room-detail-section .rd-title-tag {
-    font-family: var(--subtext);
-    color: var(--colors);
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-size: 12px;
-    font-weight: 700;
-    display: inline-block;
-    margin-bottom: 14px;
-    padding: 6px 16px;
-    border: 1px solid var(--colors);
-}
-.room-detail-section .rd-title h3 {
-    font-family: var(--primtext);
-    color: var(--color2);
-    font-size: 36px;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-.room-detail-section .rd-ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 18px;
-    color: var(--colors);
-    gap: 14px;
-}
-.room-detail-section .rd-ornament::before,
-.room-detail-section .rd-ornament::after {
-    content: '';
-    flex: 0 0 60px;
-    height: 1px;
-    background: var(--colors);
-}
-
 /* MAIN GRID */
 .room-detail-section .rd-grid {
     align-items: stretch;
@@ -3590,9 +3549,6 @@ ROOM DETAIL SECTIONS
     .room-detail-section .rd-media {
         min-height: 480px;
     }
-    .room-detail-section .rd-title h3 {
-        font-size: 28px;
-    }
     .room-detail-section {
         padding: 60px 0 70px;
     }
@@ -3620,11 +3576,15 @@ ROOM DETAIL SECTIONS
 
 <section class="room-detail-section" id="deluxe-room">
     <div class="container">
-        <div class="rd-title">
-            <span class="rd-title-tag">Room Type</span>
-            <h3>Deluxe Room with Pool View</h3>
-            <div class="rd-ornament">◆</div>
+        <div class="text-center title-general">
+    <div class="title-box w-100 d-flex align-items-center justify-content-center">
+        <div class="box-wrap">
+            <span class="tag-ats text-liht">Room Type</span>
+            <h2 class="text-liht">Deluxe Room With Pool View</h2>
+            <hr>
         </div>
+    </div>
+</div>
         <div class="row rd-grid">
 
             <!-- DESCRIPTION -->
@@ -3695,11 +3655,15 @@ ROOM DETAIL SECTIONS
 
 <section class="room-detail-section" id="junior-suite">
     <div class="container">
-        <div class="rd-title">
-            <span class="rd-title-tag">Room Type</span>
-            <h3>Junior Suite with Pool View</h3>
-            <div class="rd-ornament">◆</div>
+        <div class="text-center title-general">
+    <div class="title-box w-100 d-flex align-items-center justify-content-center">
+        <div class="box-wrap">
+            <span class="tag-ats text-liht">Room Type</span>
+            <h2 class="text-liht">Junior Suite With Pool View</h2>
+            <hr>
         </div>
+    </div>
+</div>
         <div class="row rd-grid">
 
             <!-- DESCRIPTION -->
