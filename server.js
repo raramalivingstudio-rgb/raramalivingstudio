@@ -13,6 +13,11 @@ app.get('/rooms', (req, res) => {
   res.sendFile(path.join(ROOT, 'rooms', 'index.html'));
 });
 
+// Clean URL for the gallery page — same pattern as /rooms.
+app.get('/gallery', (req, res) => {
+  res.sendFile(path.join(ROOT, 'gallery', 'index.html'));
+});
+
 // Serve static files (index.html at /, plus /assets/* and /data/*)
 app.use(express.static(ROOT));
 
