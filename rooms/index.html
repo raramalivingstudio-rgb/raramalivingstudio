@@ -1996,32 +1996,54 @@ html .toggle-primary .toggle.active>label {
 
 /* ======== Rooms page hero ======== */
 .page-hero {
-    height: 280px;
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://raramalivingstudio.com/wp-content/uploads/2024/02/bed-view-pool-deluxe-rarama-768x543.jpg');
+    position: relative;
+    height: 450px;
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)), url('https://raramalivingstudio.com/wp-content/uploads/2024/02/bed-view-pool-deluxe-rarama-768x543.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin-top: -122px;
+    padding: 122px 24px 0;
     color: #fff;
-    padding: 0 24px;
+    text-align: center;
+    font-family: var(--subtext);
+}
+.page-hero:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    opacity: 0.8;
+    pointer-events: none;
+}
+.page-hero > div {
+    position: relative;
+    z-index: 1;
+    padding-top: 60px;
 }
 .page-hero h1 {
     font-family: var(--primtext);
-    font-size: 42px;
-    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
     color: #fff;
+    font-size: 50px;
+    line-height: 55px;
+    font-weight: 500;
+    margin: 0 0 15px;
 }
 .page-hero p {
-    font-family: var(--subtext);
+    color: #f1f1f1;
+    letter-spacing: 0.5px;
     font-size: 16px;
-    margin: 0;
-    opacity: 0.9;
+    font-weight: 300;
 }
 @media (max-width: 768px) {
-    .page-hero { height: 200px; }
-    .page-hero h1 { font-size: 28px; }
+    .page-hero { height: 350px; padding-top: 90px; }
+    .page-hero h1 { font-size: 28px; line-height: 36px; letter-spacing: 3px; }
+    .page-hero > div { padding-top: 30px; }
 }
 
 /* ======== Room detail sections ======== */
