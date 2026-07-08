@@ -3367,6 +3367,11 @@ ABOUT SECTION ONLY
 <style>
 /* =========================
 ROOM DETAIL SECTIONS
+
+/* WIDER TITLE — only inside .room-detail-section, leaving the
+   page-wide .title-general .box-wrap { width:60% } rule untouched so
+   the rooms preview above and the testimonials below keep their
+   existing 60% constraint. */
 ========================= */
 .room-detail-section {
     padding: 80px 0 90px;
@@ -3375,6 +3380,13 @@ ROOM DETAIL SECTIONS
 }
 .room-detail-section + .room-detail-section {
     border-top: 1px solid #f0f0f0;
+}
+
+.room-detail-section .text-center.title-general .box-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* MAIN GRID */
