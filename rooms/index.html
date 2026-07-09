@@ -3348,379 +3348,360 @@ ABOUT SECTION ONLY
 
 <style>
 /* =========================
-ROOM DETAIL SECTIONS
-Wider-title override: only inside .room-detail-section, leaving
-the page-wide .title-general .box-wrap { width:60% } rule untouched
-so the rooms preview above and the testimonials below keep their
-existing 60% constraint.
+ROOM DETAIL SECTIONS — vertical layout
 ========================= */
 .room-detail-section {
     padding: 120px 0 90px;
     background: #fff;
     position: relative;
-}
-.room-detail-section + .room-detail-section {
     border-top: 1px solid #f0f0f0;
 }
-
-.room-detail-section .text-center.title-general .box-wrap {
-    width: 100%;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+.room-detail-section:first-of-type {
+    border-top: none;
+}
+.room-detail-section .rd-inner {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-/* MAIN GRID */
-.room-detail-section .rd-grid {
-    align-items: stretch;
+/* HEAD (title block) */
+.room-detail-section .rd-head {
+    margin-bottom: 48px;
 }
-.room-detail-section .rd-desc {
-    padding-right: 32px;
+.room-detail-section .rd-eyebrow {
+    display: inline-block;
+    font-family: var(--subtext);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--color2);
+    margin-bottom: 14px;
 }
-
-/* HERO + THUMBS GALLERY */
-.room-detail-section .rd-media {
-    display: grid;
-    grid-template-columns: 1.55fr 1fr;
-    gap: 10px;
-    min-height: 620px;
-    height: 100%;
-}
-.room-detail-section .rd-hero {
-    grid-column: 1;
-    grid-row: 1 / span 4;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: zoom-in;
-    transition: transform 0.5s ease;
-}
-.room-detail-section .rd-hero:hover {
-    transform: scale(1.02);
-}
-.room-detail-section .rd-thumbs {
-    grid-column: 2;
-    grid-row: 1 / span 4;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
-}
-.room-detail-section .rd-thumb {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: zoom-in;
-    transition: transform 0.4s ease;
-    margin: 0;
-}
-.room-detail-section .rd-thumb:hover {
-    transform: scale(1.04);
-}
-
-/* DESCRIPTION TYPOGRAPHY */
-.room-detail-section h2.elementor-heading-title {
+.room-detail-section .rd-title {
     font-family: var(--primtext);
-    font-size: 26px;
-    color: var(--colors);
-    margin: 0 0 18px 0;
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: 500;
+    color: var(--color2);
+    margin: 0 0 18px 0;
     letter-spacing: 0.5px;
-    position: relative;
-    padding-bottom: 14px;
 }
-.room-detail-section h2.elementor-heading-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
+.room-detail-section .rd-rule {
+    width: 60px;
     height: 2px;
     background: var(--colors);
+    border: 0;
+    margin: 0 auto;
 }
-.room-detail-section .elementor-text-editor {
-    font-family: var(--subtext);
-    color: #555;
-    font-size: 15px;
-    line-height: 1.8;
-    margin: 0 0 28px 0;
+
+/* BODY (filled by JS in Task 3) */
+.room-detail-section .rd-body {
+    display: none;
 }
-.room-detail-section h6.elementor-heading-title {
-    font-family: var(--subtext);
-    font-size: 13px;
-    color: var(--color2);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 28px 0 16px 0;
-    font-weight: 600;
+.room-detail-section .rd-body.rd-ready {
+    display: block;
+}
+
+/* PHOTO BLOCK */
+.room-detail-section .rd-photo {
+    position: relative;
+    margin-bottom: 40px;
+}
+.room-detail-section .rd-hero {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: zoom-in;
+    background: #f5f5f5;
+}
+.room-detail-section .rd-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
     display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.room-detail-section h6.elementor-heading-title::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--colors);
-    display: inline-block;
-}
-.room-detail-section ul.elementor-icon-list-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    font-family: var(--subtext);
-    font-size: 15px;
-    color: #444;
-    border-bottom: 1px dashed #eee;
-}
-.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item:last-child {
-    border-bottom: none;
-}
-.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-icon {
-    width: 36px;
-    height: 36px;
-    background: rgba(0, 82, 50, 0.08);
-    color: var(--colors);
-    border-radius: 4px;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: 14px;
-    font-size: 14px;
-    flex-shrink: 0;
-    transition: all 300ms ease;
+    transition: background 250ms ease;
 }
-.room-detail-section ul.elementor-icon-list-items .elementor-icon-list-item:hover .elementor-icon-list-icon {
+.room-detail-section .rd-nav:hover { background: rgba(0, 0, 0, 0.8); }
+.room-detail-section .rd-prev { left: 14px; }
+.room-detail-section .rd-next { right: 14px; }
+
+.room-detail-section .rd-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+}
+.room-detail-section .rd-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 200ms ease;
+}
+.room-detail-section .rd-dot.active { background: var(--colors); }
+
+.room-detail-section .rd-thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+.room-detail-section .rd-thumb {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0.55;
+    cursor: pointer;
+    transition: opacity 200ms ease, outline-color 200ms ease;
+    outline: 2px solid transparent;
+}
+.room-detail-section .rd-thumb.active {
+    opacity: 1;
+    outline-color: var(--colors);
+}
+
+/* DESCRIPTION */
+.room-detail-section .rd-desc {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 32px auto;
+    font-family: var(--subtext);
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* AMENITIES */
+.room-detail-section .rd-amenities {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.room-detail-section .rd-amenities li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    padding: 20px 12px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    transition: border-color 300ms ease;
+}
+.room-detail-section .rd-amenities li:hover {
+    border-color: var(--colors);
+}
+.room-detail-section .rd-amenities i {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 82, 50, 0.08);
+    color: var(--colors);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: background 300ms ease, color 300ms ease;
+}
+.room-detail-section .rd-amenities li:hover i {
     background: var(--colors);
     color: #fff;
 }
-.room-detail-section .elementor-button-wrapper {
-    margin-top: 36px;
+.room-detail-section .rd-amenities span {
+    font-family: var(--subtext);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color2);
 }
-.room-detail-section .elementor-button {
+
+/* CTA */
+.room-detail-section .rd-cta-wrap {
+    text-align: center;
+}
+.room-detail-section .rd-cta {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 38px;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 480px;
+    padding: 18px 0;
     background: var(--colors);
     color: #fff !important;
     font-family: var(--subtext);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-weight: 600;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: all 350ms ease;
+    transition: background 350ms ease, letter-spacing 350ms ease;
 }
-.room-detail-section .elementor-button::after {
-    content: '→';
-    font-size: 16px;
+.room-detail-section .rd-cta i {
     transition: transform 350ms ease;
 }
-.room-detail-section .elementor-button:hover {
+.room-detail-section .rd-cta:hover {
     background: var(--color4);
     letter-spacing: 4px;
 }
-.room-detail-section .elementor-button:hover::after {
+.room-detail-section .rd-cta:hover i {
     transform: translateX(4px);
 }
-.room-detail-section .elementor-button-text {
-    font-weight: 600;
+
+/* RESPONSIVE */
+@media (max-width: 767px) {
+    .room-detail-section .rd-amenities { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 479px) {
+    .room-detail-section .rd-amenities { grid-template-columns: 1fr; }
+    .room-detail-section .rd-nav { width: 36px; height: 36px; font-size: 18px; }
+    .room-detail-section .rd-thumb { width: 72px; height: 48px; }
 }
 
-@media (max-width: 991px) {
-    .room-detail-section .rd-desc {
-        padding-right: 0;
-        margin-bottom: 32px;
-    }
-    .room-detail-section .rd-media {
-        min-height: 480px;
-    }
-    .room-detail-section {
-        padding: 95px 0 70px;
-    }
+/* LIGHTBOX */
+.rd-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-@media (max-width: 575px) {
-    .room-detail-section .rd-media {
-        grid-template-columns: 1fr;
-        grid-template-rows: 240px repeat(4, 110px);
-        min-height: auto;
-    }
-    .room-detail-section .rd-hero {
-        grid-column: 1;
-        grid-row: 1;
-        height: 240px;
-    }
-    .room-detail-section .rd-thumbs {
-        grid-column: 1;
-        grid-row: 2;
-        grid-template-rows: none;
-        grid-template-columns: repeat(4, 1fr);
-        height: 110px;
-    }
+.rd-lightbox.open { display: flex; }
+.rd-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+.rd-lightbox button {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 200ms ease;
+}
+.rd-lightbox button:hover { background: rgba(255, 255, 255, 0.35); }
+.rd-lightbox .rd-lb-close {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+}
+.rd-lightbox .rd-lb-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+}
+.rd-lightbox .rd-lb-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
 }
 </style>
 
-<section class="room-detail-section" id="deluxe-room">
-    <div class="container">
-        <div class="text-center title-general">
-    <div class="title-box w-100 d-flex align-items-center justify-content-center">
-        <div class="box-wrap">
-            <span class="tag-ats text-liht">Room Type</span>
-            <h2 class="text-liht">Deluxe Double Room</h2>
-            <hr>
-        </div>
+<section class="room-detail-section" id="deluxe-room" data-room="deluxe">
+  <div class="container">
+    <div class="rd-inner">
+      <div class="text-center rd-head">
+        <span class="rd-eyebrow">Room Type</span>
+        <h2 class="rd-title">Deluxe Double Room</h2>
+        <hr class="rd-rule">
+      </div>
+      <script type="application/json" class="rd-data">
+        {
+          "name": "Deluxe Double Room",
+          "nameId": "deluxe-room",
+          "description": "Indulge in comfort and convenience at our hotel, designed to accommodate up to 2 guests. Enjoy a refreshing outdoor pool and modern bathroom amenities for your relaxation. Experience ultimate comfort with air conditioning and entertainment on a flat-screen TV. Step onto the terrace to soak in the views, stay connected with free Wi-Fi, and rest assured with complimentary parking during your stay.",
+          "amenities": [
+            { "icon": "fas fa-users",       "label": "2 Guest" },
+            { "icon": "fas fa-bed",         "label": "Full Bed" },
+            { "icon": "fas fa-shower",      "label": "1 Bathroom" },
+            { "icon": "fas fa-wifi",        "label": "Wifi" },
+            { "icon": "fas fa-swimming-pool","label": "Pool" },
+            { "icon": "fas fa-snowflake",   "label": "Full AC" }
+          ],
+          "images": [
+            "assets/img/rooms/deluxe/bed.webp",
+            "assets/img/rooms/deluxe/bed-1.webp",
+            "assets/img/rooms/deluxe/bathroom.webp",
+            "assets/img/rooms/deluxe/bedroom-view.webp",
+            "assets/img/rooms/deluxe/bed-morning.webp"
+          ]
+        }
+      </script>
     </div>
-</div>
-        <div class="row rd-grid">
-
-            <!-- DESCRIPTION -->
-            <div class="col-lg-5 col-12 rd-desc">
-                <h2 class="elementor-heading-title">Description</h2>
-                <div class="elementor-text-editor">
-                    <p>Indulge in comfort and convenience at our hotel, designed to accommodate up to 2 guests. Enjoy a refreshing outdoor pool and modern bathroom amenities for your relaxation. Experience ultimate comfort with air conditioning and entertainment on a flat-screen TV. Step onto the terrace to soak in the views, stay connected with free Wi-Fi, and rest assured with complimentary parking during your stay.</p>
-                </div>
-
-                <h6 class="elementor-heading-title">Room Detail</h6>
-                <ul class="elementor-icon-list-items">
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-users"></i></span>
-                        <span class="elementor-icon-list-text">2 Guest</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-bed"></i></span>
-                        <span class="elementor-icon-list-text">Full Bed</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-shower"></i></span>
-                        <span class="elementor-icon-list-text">1 Bathroom</span>
-                    </li>
-                </ul>
-
-                <h6 class="elementor-heading-title">Facility</h6>
-                <ul class="elementor-icon-list-items">
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-wifi"></i></span>
-                        <span class="elementor-icon-list-text">Wifi</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-swimming-pool"></i></span>
-                        <span class="elementor-icon-list-text">Pool</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-snowflake"></i></span>
-                        <span class="elementor-icon-list-text">Full AC</span>
-                    </li>
-                </ul>
-
-                <div class="elementor-button-wrapper">
-                    <a class="elementor-button" href="https://beds24.com/book-raramalivingstudio">
-                        <span class="elementor-button-content-wrapper">
-                            <span class="elementor-button-text">RESERVE NOW</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- HERO + THUMBS GALLERY -->
-            <div class="col-lg-7 col-12">
-                <div class="rd-media">
-                    <img class="rd-hero" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed.webp" alt="Deluxe Double Room">
-                    <div class="rd-thumbs">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-1.webp" alt="Deluxe Double Room">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bathroom.webp" alt="Deluxe Double Room">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bedroom-view.webp" alt="Deluxe Double Room">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/deluxe/bed-morning.webp" alt="Deluxe Double Room">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+  </div>
 </section>
 
-<section class="room-detail-section" id="king-room">
-    <div class="container">
-        <div class="text-center title-general">
-    <div class="title-box w-100 d-flex align-items-center justify-content-center">
-        <div class="box-wrap">
-            <span class="tag-ats text-liht">Room Type</span>
-            <h2 class="text-liht">King Room With Pool View</h2>
-            <hr>
-        </div>
+<section class="room-detail-section" id="king-room" data-room="king">
+  <div class="container">
+    <div class="rd-inner">
+      <div class="text-center rd-head">
+        <span class="rd-eyebrow">Room Type</span>
+        <h2 class="rd-title">King Room With Pool View</h2>
+        <hr class="rd-rule">
+      </div>
+      <script type="application/json" class="rd-data">
+        {
+          "name": "King Room With Pool View",
+          "nameId": "king-room",
+          "description": "Indulge in luxury with our king room, designed to elevate your stay with spacious accommodation and upscale amenities. Experience comfort and style with separate living and sleeping areas, perfect for relaxation or productivity. Unwind in a lavish bathroom, savoring modern comforts and indulgent features. Elevate your experience with personalized service and unparalleled comfort in our king room.",
+          "amenities": [
+            { "icon": "fas fa-users",       "label": "2 Guest" },
+            { "icon": "fas fa-bed",         "label": "King Bed" },
+            { "icon": "fas fa-shower",      "label": "1 Bathroom" },
+            { "icon": "fas fa-wifi",        "label": "Wifi" },
+            { "icon": "fas fa-swimming-pool","label": "Pool" },
+            { "icon": "fas fa-snowflake",   "label": "Full AC" }
+          ],
+          "images": [
+            "assets/img/rooms/king-room/bed.webp",
+            "assets/img/rooms/king-room/bed.webp",
+            "assets/img/rooms/king-room/bed-lamp-night.webp",
+            "assets/img/rooms/king-room/bathroom.webp",
+            "assets/img/rooms/king-room/bed-bath-view.webp"
+          ]
+        }
+      </script>
     </div>
-</div>
-        <div class="row rd-grid">
-
-            <!-- DESCRIPTION -->
-            <div class="col-lg-5 col-12 rd-desc">
-                <h2 class="elementor-heading-title">Description</h2>
-                <div class="elementor-text-editor">
-                    <p>Indulge in luxury with our king room, designed to elevate your stay with spacious accommodation and upscale amenities. Experience comfort and style with separate living and sleeping areas, perfect for relaxation or productivity. Unwind in a lavish bathroom, savoring modern comforts and indulgent features. Elevate your experience with personalized service and unparalleled comfort in our king room.</p>
-                </div>
-
-                <h6 class="elementor-heading-title">Room Detail</h6>
-                <ul class="elementor-icon-list-items">
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-users"></i></span>
-                        <span class="elementor-icon-list-text">2 Guest</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-bed"></i></span>
-                        <span class="elementor-icon-list-text">King Bed</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-shower"></i></span>
-                        <span class="elementor-icon-list-text">1 Bathroom</span>
-                    </li>
-                </ul>
-
-                <h6 class="elementor-heading-title">Facility</h6>
-                <ul class="elementor-icon-list-items">
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-wifi"></i></span>
-                        <span class="elementor-icon-list-text">Wifi</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-swimming-pool"></i></span>
-                        <span class="elementor-icon-list-text">Pool</span>
-                    </li>
-                    <li class="elementor-icon-list-item">
-                        <span class="elementor-icon-list-icon"><i class="fas fa-snowflake"></i></span>
-                        <span class="elementor-icon-list-text">Full AC</span>
-                    </li>
-                </ul>
-
-                <div class="elementor-button-wrapper">
-                    <a class="elementor-button" href="https://beds24.com/book-raramalivingstudio">
-                        <span class="elementor-button-content-wrapper">
-                            <span class="elementor-button-text">RESERVE NOW</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- HERO + THUMBS GALLERY -->
-            <div class="col-lg-7 col-12">
-                <div class="rd-media">
-                    <img class="rd-hero" loading="lazy" decoding="async" src="assets/img/rooms/king-room/bed.webp" alt="King Room with Pool View">
-                    <div class="rd-thumbs">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/king-room/bed.webp" alt="King Room with Pool View">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/king-room/bed-lamp-night.webp" alt="King Room with Pool View">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/king-room/bathroom.webp" alt="King Room with Pool View">
-                    <img class="rd-thumb" loading="lazy" decoding="async" src="assets/img/rooms/king-room/bed-bath-view.webp" alt="King Room with Pool View">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+  </div>
 </section>
 
 <style>
@@ -5399,6 +5380,209 @@ $('.img-bawah').slick({
 })();
 </script>
 
-</body>
+<script>
+(function () {
+    'use strict';
 
+    function buildPhoto(images, name) {
+        var photo = document.createElement('div');
+        photo.className = 'rd-photo';
+
+        var prev = document.createElement('button');
+        prev.className = 'rd-nav rd-prev';
+        prev.type = 'button';
+        prev.setAttribute('aria-label', 'Previous photo');
+        prev.textContent = '\u2039';
+
+        var next = document.createElement('button');
+        next.className = 'rd-nav rd-next';
+        next.type = 'button';
+        next.setAttribute('aria-label', 'Next photo');
+        next.textContent = '\u203a';
+
+        var hero = document.createElement('img');
+        hero.className = 'rd-hero';
+        hero.loading = 'lazy';
+        hero.decoding = 'async';
+        hero.src = images[0];
+        hero.alt = name;
+        hero.dataset.role = 'hero';
+
+        var dots = document.createElement('div');
+        dots.className = 'rd-dots';
+        images.forEach(function (_, i) {
+            var dot = document.createElement('span');
+            dot.className = 'rd-dot' + (i === 0 ? ' active' : '');
+            dot.dataset.idx = String(i);
+            dots.appendChild(dot);
+        });
+
+        var thumbs = document.createElement('div');
+        thumbs.className = 'rd-thumbs';
+        images.forEach(function (src, i) {
+            var t = document.createElement('img');
+            t.className = 'rd-thumb' + (i === 0 ? ' active' : '');
+            t.loading = 'lazy';
+            t.decoding = 'async';
+            t.src = src;
+            t.alt = name + ' photo ' + (i + 1);
+            t.dataset.idx = String(i);
+            thumbs.appendChild(t);
+        });
+
+        photo.appendChild(prev);
+        photo.appendChild(next);
+        photo.appendChild(hero);
+        photo.appendChild(dots);
+        photo.appendChild(thumbs);
+        return photo;
+    }
+
+    function buildDesc(text) {
+        var desc = document.createElement('div');
+        desc.className = 'rd-desc';
+        var p = document.createElement('p');
+        p.textContent = text;
+        desc.appendChild(p);
+        return desc;
+    }
+
+    function buildAmenities(items) {
+        var ul = document.createElement('ul');
+        ul.className = 'rd-amenities';
+        items.forEach(function (item) {
+            var li = document.createElement('li');
+            var ic = document.createElement('i');
+            ic.className = item.icon;
+            var sp = document.createElement('span');
+            sp.textContent = item.label;
+            li.appendChild(ic);
+            li.appendChild(sp);
+            ul.appendChild(li);
+        });
+        return ul;
+    }
+
+    function buildCTA() {
+        var wrap = document.createElement('div');
+        wrap.className = 'rd-cta-wrap';
+        var a = document.createElement('a');
+        a.className = 'rd-cta';
+        a.href = 'https://beds24.com/book-raramalivingstudio';
+        var label = document.createElement('span');
+        label.textContent = 'RESERVE NOW';
+        var arrow = document.createElement('i');
+        arrow.className = 'fas fa-arrow-right';
+        a.appendChild(label);
+        a.appendChild(arrow);
+        wrap.appendChild(a);
+        return wrap;
+    }
+
+    // Build one shared lightbox element on <body>.
+    var lb = document.createElement('div');
+    lb.className = 'rd-lightbox';
+    var lbClose = document.createElement('button');
+    lbClose.className = 'rd-lb-close';
+    lbClose.type = 'button';
+    lbClose.setAttribute('aria-label', 'Close');
+    lbClose.textContent = '\u00d7';
+    var lbPrev = document.createElement('button');
+    lbPrev.className = 'rd-lb-prev';
+    lbPrev.type = 'button';
+    lbPrev.setAttribute('aria-label', 'Previous photo');
+    lbPrev.textContent = '\u2039';
+    var lbImg = document.createElement('img');
+    lbImg.className = 'rd-lb-img';
+    lbImg.alt = '';
+    var lbNext = document.createElement('button');
+    lbNext.className = 'rd-lb-next';
+    lbNext.type = 'button';
+    lbNext.setAttribute('aria-label', 'Next photo');
+    lbNext.textContent = '\u203a';
+    lb.appendChild(lbClose);
+    lb.appendChild(lbPrev);
+    lb.appendChild(lbImg);
+    lb.appendChild(lbNext);
+    document.body.appendChild(lb);
+
+    // Per-section state for slider
+    var sections = document.querySelectorAll('.room-detail-section[data-room]');
+    var activeSection = null;
+
+    function showIdx(section, i) {
+        var hero = section.querySelector('.rd-hero');
+        var thumbs = section.querySelectorAll('.rd-thumb');
+        var dots = section.querySelectorAll('.rd-dot');
+        var total = thumbs.length;
+        var idx = ((i % total) + total) % total;
+        hero.src = thumbs[idx].src;
+        hero.alt = thumbs[idx].alt;
+        thumbs.forEach(function (t, n) { t.classList.toggle('active', n === idx); });
+        dots.forEach(function (d, n) { d.classList.toggle('active', n === idx); });
+        section._rdIdx = idx;
+    }
+
+    function openLB(section) {
+        activeSection = section;
+        lbImg.src = section.querySelector('.rd-hero').src;
+        lbImg.alt = section.querySelector('.rd-hero').alt;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLB() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        activeSection = null;
+    }
+    function lbNav(delta) {
+        if (!activeSection) return;
+        showIdx(activeSection, (activeSection._rdIdx || 0) + delta);
+        lbImg.src = activeSection.querySelector('.rd-hero').src;
+        lbImg.alt = activeSection.querySelector('.rd-hero').alt;
+    }
+
+    sections.forEach(function (section) {
+        var dataNode = section.querySelector('script.rd-data');
+        if (!dataNode) return;
+        var data;
+        try { data = JSON.parse(dataNode.textContent); }
+        catch (e) { console.error('rd: bad JSON for', section.dataset.room, e); return; }
+
+        var inner = section.querySelector('.rd-inner');
+        var body = document.createElement('div');
+        body.className = 'rd-body';
+        body.appendChild(buildPhoto(data.images, data.name));
+        body.appendChild(buildDesc(data.description));
+        body.appendChild(buildAmenities(data.amenities));
+        body.appendChild(buildCTA());
+        inner.appendChild(body);
+        body.classList.add('rd-ready');
+
+        section._rdIdx = 0;
+        section.querySelector('.rd-prev').addEventListener('click', function () { showIdx(section, (section._rdIdx || 0) - 1); });
+        section.querySelector('.rd-next').addEventListener('click', function () { showIdx(section, (section._rdIdx || 0) + 1); });
+        section.querySelectorAll('.rd-dot').forEach(function (d) {
+            d.addEventListener('click', function () { showIdx(section, parseInt(d.dataset.idx, 10)); });
+        });
+        section.querySelectorAll('.rd-thumb').forEach(function (t) {
+            t.addEventListener('click', function () { showIdx(section, parseInt(t.dataset.idx, 10)); });
+        });
+        section.querySelector('.rd-hero').addEventListener('click', function () { openLB(section); });
+    });
+
+    lbClose.addEventListener('click', closeLB);
+    lbPrev.addEventListener('click', function () { lbNav(-1); });
+    lbNext.addEventListener('click', function () { lbNav(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowLeft') lbNav(-1);
+        if (e.key === 'ArrowRight') lbNav(1);
+    });
+})();
+</script>
+
+</body>
 </html>
