@@ -190,6 +190,24 @@
     });
   };
 
+  // Initialize every room swiper (Deluxe + Junior Suite carousels)
+  const initRoomSwipers = () => {
+    if (!window.Swiper) return;
+    document.querySelectorAll('.room-swiper').forEach((el) => {
+      if (el.swiper) return;
+      new window.Swiper(el, {
+        loop: true,
+        speed: 500,
+        autoplay: { delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true },
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+        navigation: {
+          nextEl: el.querySelector('.swiper-button-next'),
+          prevEl: el.querySelector('.swiper-button-prev')
+        }
+      });
+    });
+  };
+
   if (wrapper) {
     fetch('/api/reviews')
       .then(r => r.ok ? r.json() : { reviews: [] })
@@ -210,4 +228,47 @@
         initReviewsSwiper();
       });
   }
+
+  // Initialize room image carousels
+  initRoomSwipers();
+
+  // Initialize Our Story gallery slider (14 slides, multi-slide layout)
+  const initGallerySwiper = () => {
+    const el = document.querySelector('.gallery-slider');
+    console.log('[gallery] init called. Swiper:', !!window.Swiper, '| element:', !!el, '| slides:', el ? el.querySelectorAll('.swiper-slide').length : 0);
+    if (!window.Swiper || !el) {
+      console.warn('[gallery] Aborting init: Swiper=', !!window.Swiper, 'el=', !!el);
+      return;
+    }
+    if (el.swiper) {
+      console.log('[gallery] Already initialized');
+      return;
+    }
+    try {
+      const swiper = new window.Swiper(el, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        speed: 600,
+        autoplay: { delay: 4000, disableOnInteraction: false, pauseOnMouseEnter: true },
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+        navigation: {
+          nextEl: el.querySelector('.swiper-button-next'),
+          prevEl: el.querySelector('.swiper-button-prev')
+        },
+        breakpoints: {
+          640:  { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }
+      });
+      console.log('[gallery] Swiper initialized OK, slides count:', swiper.slides.length);
+    } catch (err) {
+      console.error('[gallery] Swiper init failed:', err);
+    }
+  };
+
+  // Try immediately, then with small delay as fallback for late-loading layout
+  initGallerySwiper();
+  setTimeout(initGallerySwiper, 200);
+  setTimeout(initGallerySwiper, 600);
 })();
