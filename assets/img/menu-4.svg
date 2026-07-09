@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <rect width="600" height="400" fill="#F7F1E8"/>
-  <ellipse cx="200" cy="240" rx="80" ry="60" fill="#F7F1E8" stroke="#3B2A1E" stroke-width="2"/>
-  <ellipse cx="400" cy="240" rx="80" ry="60" fill="#F7F1E8" stroke="#3B2A1E" stroke-width="2"/>
-  <ellipse cx="200" cy="230" rx="60" ry="40" fill="#E5DBC8"/>
-  <ellipse cx="400" cy="230" rx="60" ry="40" fill="#C46A3F" fill-opacity="0.6"/>
-  <text x="300" y="350" text-anchor="middle" font-family="Marcellus, serif" font-size="24" fill="#3B2A1E">Sides</text>
-</svg>
