@@ -1,0 +1,13 @@
+# Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
+
+# Long-lived caching for static, rarely-changing assets (images, fonts, vendor libs).
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML pages: let the browser revalidate so content edits show up quickly.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Reviews API should always be fresh.
+/api/reviews
+  Cache-Control: no-cache
