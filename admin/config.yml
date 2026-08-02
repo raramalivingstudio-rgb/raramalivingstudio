@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: raramalivingstudio-rgb/raramalivingstudio
+  branch: feat/rooms-page
+  base_url: https://raramalivingstudio.pages.dev
+  auth_endpoint: oauth/auth
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+publish_mode: simple
+collections:
+  - name: reviews
+    label: Guest Reviews
+    icon: star
+    files:
+      - name: reviews
+        label: Reviews list
+        file: data/reviews.json
+        description: Add, edit, reorder or remove the testimonials shown on the site.
+        fields:
+          - label: Reviews
+            name: reviews
+            widget: list
+            label_singular: Review
+            summary: "{{fields.name}} — {{fields.rating}}★"
+            fields:
+              - { label: Guest name, name: name, widget: string }
+              - { label: Role / label, name: role, widget: string, default: "Our Customer" }
+              - { label: Rating (1-5), name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+              - { label: Avatar colour (hex), name: avatarColor, widget: string, default: "#5C6B4F" }
+              - { label: Review text, name: text, widget: text }
+              - { label: ID (unique number), name: id, widget: number, value_type: int }
+  - name: media
+    label: Photo Library
+    icon: image
+    files:
+      - name: readme
+        label: How to use photos
+        file: assets/img/uploads/_readme.md
+        description: Upload photos via the Media button (top bar).
+        fields:
+          - { label: Notes, name: body, widget: markdown, default: "Use the Media library (top toolbar) to upload or replace photos." }
