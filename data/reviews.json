@@ -1,36 +1,36 @@
 {
   "reviews": [
     {
-      "id": 1,
-      "name": "Place Name 1",
-      "role": "Our Customer",
+      "name": "Hiroshi Tanaka",
+      "role": "Our Guest",
       "rating": 5,
       "avatarColor": "#C46A3F",
-      "text": "Placeholder review copy. Replace this with a real guest testimonial."
+      "text": "Quiet, clean, and beautifully designed. The private pool was the highlight — we used it every morning. The staff were attentive without being intrusive, and the location in Kerobokan made it easy to get anywhere in south Bali. Strongly recommend for travelers who want peace.",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Place Name 2",
       "role": "Our Customer",
       "rating": 5,
       "avatarColor": "#5C6B4F",
-      "text": "Placeholder review copy. Replace this with a real guest testimonial."
+      "text": "Placeholder review copy. Replace this with a real guest testimonial.",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Place Name 3",
       "role": "Our Customer",
       "rating": 5,
       "avatarColor": "#6B5239",
-      "text": "Placeholder review copy. Replace this with a real guest testimonial."
+      "text": "Placeholder review copy. Replace this with a real guest testimonial.",
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Place Name 4",
       "role": "Our Customer",
       "rating": 5,
       "avatarColor": "#3B2A1E",
-      "text": "Placeholder review copy. Replace this with a real guest testimonial."
+      "text": "Placeholder review copy. Replace this with a real guest testimonial.",
+      "id": 4
     }
   ]
 }
