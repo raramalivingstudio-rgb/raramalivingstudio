@@ -5541,6 +5541,7 @@ $('.img-bawah').slick({
         lbImg.alt = activeSection.querySelector('.rd-hero').alt;
     }
 
+    function __rdRender() {
     sections.forEach(function (section) {
         var dataNode = section.querySelector('script.rd-data');
         if (!dataNode) return;
@@ -5569,6 +5570,27 @@ $('.img-bawah').slick({
         });
         section.querySelector('.rd-hero').addEventListener('click', function () { openLB(section); });
     });
+    }
+    // CMS: apply editable content from /data/rooms.json (falls back to inline data if unavailable), then render.
+    function __rdApplyThenRender() {
+      fetch('/data/rooms.json', { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) {
+          if (j && Array.isArray(j.rooms)) {
+            var byId = {};
+            j.rooms.forEach(function (rm) { if (rm && rm.nameId) byId[rm.nameId] = rm; });
+            sections.forEach(function (section) {
+              var dn = section.querySelector('script.rd-data'); if (!dn) return;
+              var cur; try { cur = JSON.parse(dn.textContent); } catch (e) { return; }
+              var ov = byId[cur.nameId];
+              if (ov) { dn.textContent = JSON.stringify(ov); }
+            });
+          }
+        })
+        .catch(function () {})
+        .then(function () { __rdRender(); });
+    }
+    __rdApplyThenRender();
 
     lbClose.addEventListener('click', closeLB);
     lbPrev.addEventListener('click', function () { lbNav(-1); });

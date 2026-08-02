@@ -29,6 +29,35 @@ collections:
               - { label: Avatar colour (hex), name: avatarColor, widget: string, default: "#5C6B4F" }
               - { label: Review text, name: text, widget: text }
               - { label: ID (unique number), name: id, widget: number, value_type: int }
+  - name: rooms
+    label: Rooms
+    icon: bed
+    files:
+      - name: rooms
+        label: Room types
+        file: data/rooms.json
+        description: Edit the Deluxe and Junior Suite name, description, amenities and photos.
+        fields:
+          - label: Rooms
+            name: rooms
+            widget: list
+            label_singular: Room
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Room name, name: name, widget: string }
+              - { label: Internal ID (do not change), name: nameId, widget: hidden }
+              - { label: Description, name: description, widget: text }
+              - label: Amenities
+                name: amenities
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Icon (Font Awesome class), name: icon, widget: string, hint: "e.g. fas fa-wifi, fas fa-bed, fas fa-swimming-pool" }
+                  - { label: Label, name: label, widget: string }
+              - label: Photos
+                name: images
+                widget: list
+                field: { label: Image, name: image, widget: image }
   - name: media
     label: Photo Library
     icon: image

@@ -1,0 +1,44 @@
+{
+  "rooms": [
+    {
+      "name": "Deluxe Double Room",
+      "nameId": "deluxe-room",
+      "description": "Indulge in comfort and convenience at our hotel, designed to accommodate up to 2 guests. Enjoy a refreshing outdoor pool and modern bathroom amenities for your relaxation. Experience ultimate comfort with air conditioning and entertainment on a flat-screen TV. Step onto the terrace to soak in the views, stay connected with free Wi-Fi, and rest assured with complimentary parking during your stay.",
+      "amenities": [
+        { "icon": "fas fa-users", "label": "2 Guest" },
+        { "icon": "fas fa-bed", "label": "Full Bed" },
+        { "icon": "fas fa-shower", "label": "1 Bathroom" },
+        { "icon": "fas fa-wifi", "label": "Wifi" },
+        { "icon": "fas fa-swimming-pool", "label": "Pool" },
+        { "icon": "fas fa-snowflake", "label": "Full AC" }
+      ],
+      "images": [
+        "/assets/img/rooms/deluxe/bed.webp",
+        "/assets/img/rooms/deluxe/bed-1.webp",
+        "/assets/img/rooms/deluxe/bathroom.webp",
+        "/assets/img/rooms/deluxe/bedroom-view.webp",
+        "/assets/img/rooms/deluxe/bed-morning.webp"
+      ]
+    },
+    {
+      "name": "Junior Suite With Pool View",
+      "nameId": "king-room",
+      "description": "Indulge in luxury with our junior suite, designed to elevate your stay with spacious accommodation and upscale amenities. Experience comfort and style with separate living and sleeping areas, perfect for relaxation or productivity. Unwind in a lavish bathroom, savoring modern comforts and indulgent features. Elevate your experience with personalized service and unparalleled comfort in our junior suite.",
+      "amenities": [
+        { "icon": "fas fa-users", "label": "2 Guest" },
+        { "icon": "fas fa-bed", "label": "King Bed" },
+        { "icon": "fas fa-shower", "label": "1 Bathroom" },
+        { "icon": "fas fa-wifi", "label": "Wifi" },
+        { "icon": "fas fa-swimming-pool", "label": "Pool" },
+        { "icon": "fas fa-snowflake", "label": "Full AC" }
+      ],
+      "images": [
+        "/assets/img/rooms/king-room/bed.webp",
+        "/assets/img/rooms/king-room/bed.webp",
+        "/assets/img/rooms/king-room/bed-lamp-night.webp",
+        "/assets/img/rooms/king-room/bathroom.webp",
+        "/assets/img/rooms/king-room/bed-bath-view.webp"
+      ]
+    }
+  ]
+}
